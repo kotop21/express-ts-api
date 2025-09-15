@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { newUserDb, outputUserDb } from '../utils/index.js';
-const router: Router = Router();
+const userRouter: Router = Router();
 
-router.post("/user", async (req, res) => {
+userRouter.post("/user", async (req, res) => {
   interface UserRequest {
     name: string;
     password: string;
@@ -18,7 +18,7 @@ router.post("/user", async (req, res) => {
   res.status(500).json({ error: result.error });
 });
 
-router.get("/users", async (req, res) => {
+userRouter.get("/users", async (req, res) => {
   const result = await outputUserDb()
   if (result.success) {
     res.json(result.data);
@@ -27,4 +27,4 @@ router.get("/users", async (req, res) => {
   }
 });
 
-export default router;
+export default userRouter;

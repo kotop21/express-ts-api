@@ -1,5 +1,5 @@
 import express from 'express';
-import router from './routes/database.js';
+import userRouter from './routes/users.routes.js';
 import { consola } from 'consola';
 import { poolDb } from './utils/index.js';
 
@@ -13,7 +13,7 @@ async function main() {
 
     const app = express();
     app.use(express.json());
-    app.use('/', router);
+    app.use('/', userRouter);
 
     app.listen(port, () => {
       consola.success(`Слухаєм порт: ${port}`)
