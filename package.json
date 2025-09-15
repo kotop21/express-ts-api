@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node -r dotenv/config test.js",
     "start": "ts-node src/app.ts"
   },
   "keywords": [],
@@ -23,6 +24,7 @@
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "express-async-errors": "^3.1.1",
-    "mariadb": "^3.4.5"
+    "mariadb": "^3.4.5",
+    "zod": "^4.1.8"
   }
 }
